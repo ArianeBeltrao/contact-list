@@ -1,15 +1,21 @@
 <script setup lang="ts">
-import { Button } from './components/ui/button'
+import Contacts from './pages/Contacts.vue';
+import Sidebar from './components/Sidebar.vue';
 </script>
 
 <template>
-  <div class="px-3 py-4 flex items-center justify-between w-full bg-blue-300">
-    Contact list test
+  <div class="bg-dark h-screen">
+    <div class="flex flex-col" style="height: 100vh;">
+      <div class="sticky top-0 p-2 flex items-center justify-between w-full bg-blue-300">
+        HEADER
+      </div>
+      <div class="flex w-full h-full">
+        <Sidebar/>
+        <div class="w-full h-full relative">
+          <Contacts />
+        </div>
+      </div>
+    </div>
   </div>
-  <div>
-    <Button>Click me test</Button>
-    <p class="text-green-300 bg-yellow-200">Hello Vite test!</p>
-  </div>
-</template>
 
-<style src="./assets/tailwind.css" />
+</template>
