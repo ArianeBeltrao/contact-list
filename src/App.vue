@@ -1,15 +1,26 @@
 <script setup lang="ts">
-import { Button } from './components/ui/button'
+import { ref } from 'vue'
+import Contacts from './pages/Contacts.vue'
+import Sidebar from './components/Sidebar.vue'
+import Header from './components/Header.vue'
+
+const showSidebar = ref(true)
+
+const toggleSidebar = () => {
+  showSidebar.value = !showSidebar.value
+}
 </script>
 
 <template>
-  <div class="px-3 py-4 flex items-center justify-between w-full bg-blue-300">
-    Contact list test
-  </div>
-  <div>
-    <Button>Click me test</Button>
-    <p class="text-green-300 bg-yellow-200">Hello Vite test!</p>
+  <div class="bg-stone-700 h-screen overflow-hidden">
+    <div class="flex flex-col p-4" style="height: 100vh">
+      <Header @toggle-sidebar="toggleSidebar" />
+
+      <div class="flex w-full h-full">
+        <Sidebar v-if="showSidebar" />
+
+        <Contacts />
+      </div>
+    </div>
   </div>
 </template>
-
-<style src="./assets/tailwind.css" />
