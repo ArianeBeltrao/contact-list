@@ -11,7 +11,7 @@ const menuItems = [
 
 <template>
   <div
-    class="sm:w-72 w-40 h-full flex-none justify-between flex flex-col bg-stone-700"
+    class="w-40 fixed left-0 z-20 sm:flex sm:relative sm:w-72 h-full flex-none sm:justify-between justify-start flex flex-col bg-stone-700 p-4"
   >
     <div class="flex flex-col m-3">
       <router-link
